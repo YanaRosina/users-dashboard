@@ -1,0 +1,27 @@
+{
+  "name": "users-dashboard-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Users Dashboard",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "eslint src/**/*.ts",
+    "docker:build": "docker build -t users-dashboard-backend .",
+    "docker:run": "docker run -p 3001:3001 users-dashboard-backend",
+    "docker:stop": "docker stop $(docker ps -q --filter ancestor=users-dashboard-backend)"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.0.0",
+    "fastify": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.0.0"
+  }
+}
